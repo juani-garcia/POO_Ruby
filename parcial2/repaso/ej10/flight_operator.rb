@@ -12,6 +12,6 @@ class FlightOperator
   def miles_status(member, airline)
     s1 = "#{member.name} no registra millas acumuladas en #{airline}"
     s2 = "Millas de #{member.name} en #{airline}: #{member.get_miles(airline)}"
-    member.has_registered ? s1 : s2
+    member.has_registered? ? s1 : s2
   end
 end

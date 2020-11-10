@@ -26,7 +26,7 @@ class Member
     flight.price
   end
 
-  def has_registered
+  def has_registered?
     @miles.empty?
   end
 end
