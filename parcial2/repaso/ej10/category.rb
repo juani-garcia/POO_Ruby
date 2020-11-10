@@ -6,8 +6,12 @@ class Category
     raise 'Abstract class'
   end
 
-  def can_add?(amount)
-    amount < @maximum
+  def to_add(new_miles, old_miles)
+    total = get_total(new_miles, old_miles)
+    total > @maximum ? @maximum : total
   end
 
+  def get_total(new_miles, old_miles)
+    new_miles * @multiplier + old_miles
+  end
 end

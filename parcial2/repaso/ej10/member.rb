@@ -21,12 +21,14 @@ class Member
   end
 
   def add_miles(flight)
-    total = @category.multiplier * flight.miles +  @miles[flight.airline]
-    @category.can_add?(total) ? @miles[flight.airline] = total : @miles[flight.airline] = @category.maximum
+    # total = @category.multiplier * flight.miles +  @miles[flight.airline]
+    # @category.can_add?(total) ? @miles[flight.airline] = total : @miles[flight.airline] = @category.maximum
+    @miles[flight.airline] = @category.to_add(flight.miles, @miles[flight.airline])
     flight.price
   end
 
   def has_registered?
     @miles.empty?
   end
+
 end
